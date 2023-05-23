@@ -6,7 +6,9 @@ public class Banco {
     private double saque;
     private String tipoConta;
 
-    
+    public Banco() {
+      super();
+    }
 
     public Banco(String nomeCliente, int numeroConta, double saldo, double saque, String tipoConta) {
         this.nomeCliente = nomeCliente;

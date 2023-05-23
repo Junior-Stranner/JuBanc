@@ -77,8 +77,37 @@ public ArrayList<Cliente> lerDadosBD() throws SQLException{
 }
 
 
+public void alterarContatoBD(Cliente cliente) throws SQLException {
+		
+    String sql1 =  "UPDATE Cliente SET senha = ? WHERE nomeCompleto = ?";
+
+    Connection con = null;
+    PreparedStatement codigo = null;
+
+    try {
+        con = Conexao.conectarBD();
+        codigo = con.prepareStatement(sql1);
+        codigo.setString(1, cliente.getNomeCompleto());
+        codigo.setString(2,cliente.getSenha());
+        
+    } catch (SQLException e) {
+        System.out.println("ERRO UPDATE.....");
+			e.printStackTrace();
+        // TODO: handle exception
+    }finally{
+
+        if(codigo != null){
+            codigo.close();
+        }
+        if(con != null)
+            con.close();
+        }
+    }
+
+
+
 public Cliente pesquisarContaBD(String nome) throws SQLException{
-    String sql =  "SELECT * FROM Cliente WHERE nomecontato = ? ";
+    String sql =  "SELECT * FROM Cliente WHERE id = ? ";
 
     Cliente cliente = null;
     Connection con = null;
@@ -116,15 +145,16 @@ public Cliente pesquisarContaBD(String nome) throws SQLException{
 
 public void deletarContaBD(Cliente clientes) throws SQLException {
     
-    String sql1 =  "DELETE FROM clientes WHERE nomeCompleto = ?";
+    String sql1 =  "DELETE FROM Cliente WHERE id = ?";
 
+    Cliente cliente = null;
     Connection con = null;
     PreparedStatement codigo = null;
 
     try {
         con = Conexao.conectarBD();
         codigo = con.prepareStatement(sql1);
-        codigo.setString(1, clientes.getNomeCompleto());
+        codigo.setInt(1, cliente.getId());
         codigo.execute();			
     }
     catch (SQLException e) {
