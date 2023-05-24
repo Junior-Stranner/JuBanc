@@ -1,4 +1,4 @@
-package model.dao;
+/*package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +12,7 @@ public class ClienteDao {
     
 public void salvarDadosBD(Cliente cliente) throws SQLException {
 
-    String sql = "INSERT INTO Cliente (id, nomeCompleto , senha) VALUES (?,?)";
+    String sql = "INSERT INTO cliente (id, nomeCompleto , senha) VALUES (?,?)";
 
     Connection con = null;
     PreparedStatement codigo = null;
@@ -43,7 +43,7 @@ public void salvarDadosBD(Cliente cliente) throws SQLException {
 
 
 public ArrayList<Cliente> lerDadosBD() throws SQLException{
-    String sql =  "SELECT * from Cliente";
+    String sql =  "SELECT * from cliente";
 
     ArrayList<Cliente> clientes = new ArrayList<>();
 
@@ -79,7 +79,7 @@ public ArrayList<Cliente> lerDadosBD() throws SQLException{
 
 public void alterarContatoBD(Cliente cliente) throws SQLException {
 		
-    String sql1 =  "UPDATE Cliente SET senha = ? WHERE nomeCompleto = ?";
+    String sql1 =  "UPDATE cliente SET senha = ? WHERE nomeCompleto = ?";
 
     Connection con = null;
     PreparedStatement codigo = null;
@@ -107,7 +107,7 @@ public void alterarContatoBD(Cliente cliente) throws SQLException {
 
 
 public Cliente pesquisarContaBD(String nome) throws SQLException{
-    String sql =  "SELECT * FROM Cliente WHERE id = ? ";
+    String sql =  "SELECT * FROM cliente WHERE id = ? ";
 
     Cliente cliente = null;
     Connection con = null;
@@ -145,7 +145,7 @@ public Cliente pesquisarContaBD(String nome) throws SQLException{
 
 public void deletarContaBD(Cliente clientes) throws SQLException {
     
-    String sql1 =  "DELETE FROM Cliente WHERE id = ?";
+    String sql1 =  "DELETE FROM cliente WHERE id = ?";
 
     Cliente cliente = null;
     Connection con = null;
@@ -169,7 +169,7 @@ public void deletarContaBD(Cliente clientes) throws SQLException {
     }		
 }
 
-}
+}/*
 
 
 
