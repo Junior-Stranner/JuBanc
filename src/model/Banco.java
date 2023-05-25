@@ -5,20 +5,20 @@ public class Banco {
     private String senha;
     private double saldo;
     private double saque;
-    private String tipoConta;
+
 
     public Banco() {
       super();
     }
     
 
-    public Banco(String nomeCliente, int numeroConta, String senha, double saldo, double saque, String tipoConta) {
+    public Banco(String nomeCliente, int numeroConta, String senha, double saldo, double saque) {
         this.nomeCliente = nomeCliente;
         this.numeroConta = numeroConta;
         this.senha = senha;
         this.saldo = saldo;
         this.saque = saque;
-        this.tipoConta = tipoConta;
+    
     }
 
 
@@ -62,12 +62,6 @@ public class Banco {
         this.saque = saque;
     }
 
-    public String getTipoConta() {
-        return tipoConta;
-    }
-
-    public void setTipoConta(String tipoConta) {
-        this.tipoConta = tipoConta;
-    }
+  
 
 }

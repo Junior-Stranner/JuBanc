@@ -1,4 +1,4 @@
-package model.dao;
+/*package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -251,4 +251,4 @@ public class BancoDao {
                 con.close();
         }		
     }
-}
+}*/
